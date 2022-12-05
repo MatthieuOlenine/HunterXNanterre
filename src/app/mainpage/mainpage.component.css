@@ -1,0 +1,32 @@
+header{
+    background-color: white;
+    margin-left: -10px;
+    width: 105%;
+    opacity: 0.9;
+}
+
+h1{
+    color: black;
+    padding-top: 5px;
+    font-family: monospace;
+}
+
+.content{
+    padding-left: 15px;
+    margin-left: 10px;
+    border-left: solid 1px white;
+}
+
+.content p{
+    color: white;
+    font-family: monospace;
+}
+
+#private{
+    padding: 10px;
+    border: solid 1px white;
+    background-color: black;
+    opacity: 0.9;
+    color: white;
+    font-family: monospace;
+}

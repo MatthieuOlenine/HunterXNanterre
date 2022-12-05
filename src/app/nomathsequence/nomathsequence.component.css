@@ -1,0 +1,77 @@
+.content{
+    overflow: hidden;
+    width: 100.5%;
+    height: 100.3%;
+    background-image: url('/assets/img/background.jpg');
+    position: absolute;
+    margin-top: -10px;
+    margin-left: -10px;
+}
+
+.center{
+    margin-top: 35%;
+    margin-left: 38%;
+}
+
+.dot_verso{
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    padding: 1px;
+    margin: 10px;
+    background-color: black;
+    opacity: 0.75;
+}
+
+.dot_verso p{
+    margin-top: 40%;
+    text-align: center;
+    font-size: 11pt;
+    font-family: monospace;
+    color: green;
+    opacity: 0;
+}
+
+.dot_verso #cercle {
+    margin-top: -27px;
+    margin-left: 37px;
+    width: 3px;
+    height: 3px;
+    border-radius: 20px;
+    border: solid 2px green;
+    opacity: 1;
+    transition: 0.2s all;
+}
+
+.dot_recto{
+    width: 76px;
+    height: 76px;
+    border-radius: 100%;
+    padding: 1px;
+    margin: 10px;
+    background-color: black;
+    opacity: 0.85;
+    transition: 0.2s;
+    border: solid 2px green;
+    transition: 0.1s;
+}
+
+.dot_recto p{
+    margin-top: 40%;
+    text-align: center;
+    font-size: 11pt;
+    font-family: monospace;
+    color: green;
+    transition: 0.6s;
+}
+
+.dot_recto #cercle {
+    margin-top: -27px;
+    margin-left: 37px;
+    width: 0px;
+    height: 0px;
+    border-radius: 20px;
+    border: solid 2px green;
+    transition: 0.3s;
+    opacity: 0;
+}
