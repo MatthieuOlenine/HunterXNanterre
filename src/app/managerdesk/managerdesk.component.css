@@ -19,7 +19,7 @@ h1{
     color: white;
 }
 
-.class p{
+p{
     font-family: monospace;
 }
 
@@ -43,7 +43,120 @@ h1{
 .box:hover{
     background-color: black;
     color: white;
-    width: 85px;
-    height: 85px;
     transition: 0.2s all;
 }
+
+.footer{
+    margin-top: 20px;
+    color: white;
+}
+
+.infooter{
+    color: rgb(145, 145, 145);
+}
+
+.text, .textbtn{
+    font-family: monospace;
+    margin-top: 2%;
+}
+
+.text{
+    color: white;
+    background-color: black;
+    border: solid 1px white;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.textbtn{
+    font-weight: bold;
+    background-color: rgb(184, 184, 184);
+    border: 0px;
+    border-radius: 3px;
+    font-size: 11pt;
+}
+
+.detailsbtndlt{
+    margin-left: 12px;
+    width: 21px;
+    height: 22px;
+    background-color: black;
+    border: solid 1px rgb(99, 99, 99);
+    color: rgb(99, 99, 99);
+    font-family: monospace;
+    border-radius: 5px;
+}
+
+.detailsbtndlt:active{
+    border: solid 1px white;
+    color: white;
+}
+
+.textbtndlt{
+    margin-left: 10px;
+    width: 20px;
+    background-color: black;
+    border: solid 1px rgb(99, 99, 99);
+    color: rgb(99, 99, 99);
+    font-family: monospace;
+    border-radius: 5px;
+}
+
+.textbtndlt:active{
+    border: solid 1px white;
+    color: white;
+}
+
+.textindlt{
+    margin-top: 10px;
+    background-color: black;
+    border: solid 1px rgb(99, 99, 99);
+    border-radius: 5px;
+    color: rgb(99, 99, 99);
+    font-family: monospace;
+    opacity: 0.4;
+}
+
+.textbtn:active{
+    background-color: black;
+    color: white;
+}
+
+.textbtnred{
+    padding-top: 3px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    background-color: rgb(156, 0, 0);
+    border: 0px;
+    border-radius: 3px;
+    font-size: 10pt;
+}
+
+.textbtnred:active{
+    background-color: black;
+    color: white;
+}
+
+.infooterred{
+    color: rgb(156, 0, 0);
+}
+
+.sort{
+    display: flex;
+}
+
+.sort p{
+    border-bottom: solid 1px rgb(99, 99, 99);
+    margin-right: 3px;
+    color: rgb(99, 99, 99);
+    padding: 5px;
+    transition: all 0.2s;
+}
+
+.sort p.chosen{
+    background-color: white;
+    border-radius: 3px;
+    color: black;
+    transition: all 0.2s;
+}
+

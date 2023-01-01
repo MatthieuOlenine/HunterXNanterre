@@ -1,0 +1,135 @@
+<header routerLink="/">
+    <h1><marquee direction="left">- Team - {{selfdata}} -</marquee></h1>
+</header>
+<div class="content">
+    <p>- - I D - -</p>
+    <table>
+        <tr>
+            <td> 
+                <p>team name</p>
+            </td>
+            <td>
+                <p class="data">: {{selfdata}}</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>team password</p>
+            </td>
+            <td>
+                <p class="data">: '{{alldataown.password}}'</p>
+            </td>
+        </tr>
+    </table>
+    <p>- - S T A T - -</p>
+    <table>
+        <tr>
+            <td>
+                <ng-container *ngIf="alldataown.team_prog==0">
+                    <img src="./assets/img/prog_0.png" width="70px">
+                </ng-container>
+                <ng-container *ngIf="alldataown.team_prog==20">
+                    <img src="./assets/img/prog_20.png" width="70px">
+                </ng-container>
+                <ng-container *ngIf="alldataown.team_prog==40">
+                    <img src="./assets/img/prog_40.png" width="70px">
+                </ng-container>
+                <ng-container *ngIf="alldataown.team_prog==60">
+                    <img src="./assets/img/prog_60.png" width="70px">
+                </ng-container>
+                <ng-container *ngIf="alldataown.team_prog==80">
+                    <img src="./assets/img/prog_80.png" width="70px">
+                </ng-container>
+                <ng-container *ngIf="alldataown.team_prog==100">
+                    <img src="./assets/img/prog_100.png" width="70px">
+                </ng-container>
+            </td>
+            <td>
+                <p class="data">: {{alldataown.team_prog}}%</p>
+            </td>
+        </tr>
+    </table>
+    <p>- - D E T A I L S - -</p>
+    <table>
+        <tr>
+            <td>
+                <p>red door</p>
+            </td>
+            <td>
+                <p class="data">: {{alldataown.red_door}}</p>
+            </td>
+            <td>
+                <p class="nodata">→ time look</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>blue door</p>
+            </td>
+            <td>
+                <p class="data">: {{alldataown.blue_door}}</p>
+            </td>
+            <td>
+                <p class="nodata">→ time look</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>purple door</p>
+            </td>
+            <td>
+                <p class="data">: {{alldataown.purple_door}}</p>
+            </td>
+            <td>
+                <p class="nodata">→ time look</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>yellow door</p>
+            </td>
+            <td>
+                <p class="data">: {{alldataown.yellow_door}}</p>
+            </td>
+            <td>
+                <p class="nodata">→ time look</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>green door</p>
+            </td>
+            <td>
+                <p class="data">: {{alldataown.green_door}}</p>
+            </td>
+            <td>
+                <p class="nodata">→ time look</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>I N P U T</p>
+            </td>
+            <ng-container *ngIf="!alldataown.input || alldataown.verif_right == 1">
+                <td>
+                    <p class="data">: blocked</p>
+                </td>
+            </ng-container>
+            <ng-container *ngIf="alldataown.input && alldataown.verif_right !== 1">
+                <td>
+                    <p class="data">: unblocked</p>
+                </td>
+            </ng-container>
+            <ng-container *ngIf="alldataown.team_prog < 80 && !alldataown.input">
+                <td>
+                    <p class="nodata">period undefined</p>
+                </td>
+            </ng-container>
+            <ng-container *ngIf="alldataown.verif_right == 1">
+                <td>
+                    <p class="nodata">for 5 min</p>
+                </td>
+            </ng-container>
+        </tr>
+    </table>
+</div>

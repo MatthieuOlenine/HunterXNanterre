@@ -1,0 +1,27 @@
+<header routerLink="/">
+    <h1>   
+        <marquee direction=" left">
+            - P U R P L E - D O O R -
+        </marquee>
+    </h1>
+</header>
+<div class="content">
+    <p>
+      Y O U R - T E A M - N A M E ↓
+    </p>
+    <input type="text" class="private" placeholder="- - - - - - - - - - -" 
+    [(ngModel)]="searchTermname">
+    <p>
+      Y O U R - P A S S W O R D ↓
+    </p>
+    <input type="password" class="private" placeholder="keep secret" 
+    [(ngModel)]="searchTermpsswrd">
+</div>
+<br>
+<div (click)="login()" [style.backgroundColor]="isLoading ? 'grey' : 'white'" class="logindiv">
+  →  L O G I N  ←
+</div>
+<p style="text-align: center;">
+    <br>- - Bienvenue derrière la porte violette. - -
+</p>
+<div class="loader"></div>

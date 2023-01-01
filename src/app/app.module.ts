@@ -8,12 +8,17 @@ import { MainpageComponent } from './mainpage/mainpage.component';
 import { FormsModule } from '@angular/forms';
 import { NomathsequenceComponent } from './nomathsequence/nomathsequence.component';
 import { FalsecompasswayComponent } from './falsecompassway/falsecompassway.component';
-import { Qrcode1Component } from './qrcode1/qrcode1.component';
-import { Qrcode2Component } from './qrcode2/qrcode2.component';
-import { Qrcode3Component } from './qrcode3/qrcode3.component';
-import { Qrcode4Component } from './qrcode4/qrcode4.component';
+import { RedLoginDoor98456Component } from './redlogindoor/redlogindoor.component';
+import { BlueLoginDoor21980Component } from './bluelogindoor/bluelogindoor.component';
+import { PurpleLoginDoor01231Component } from './purplelogindoor/purplelogindoor.component';
+import { YellowLoginDoor73202Component } from './yellowlogindoor/yellowlogindoor.component';
 import { LostsignalComponent } from './lostsignal/lostsignal.component';
 import { AstrosolarsystemeComponent } from './astrosolarsysteme/astrosolarsysteme.component';
+import { HunterboardComponent } from './hunterboard/hunterboard.component';
+import { HunterloginpageComponent } from './hunterloginpage/hunterloginpage.component';
+import { LastsceneComponent } from './lastscene/lastscene.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HunterdetailsComponent } from './hunterdetails/hunterdetails.component';
 
 @NgModule({
   declarations: [
@@ -22,17 +27,22 @@ import { AstrosolarsystemeComponent } from './astrosolarsysteme/astrosolarsystem
     MainpageComponent,
     NomathsequenceComponent,
     FalsecompasswayComponent,
-    Qrcode1Component,
-    Qrcode2Component,
-    Qrcode3Component,
-    Qrcode4Component,
+    RedLoginDoor98456Component,
+    BlueLoginDoor21980Component,
+    PurpleLoginDoor01231Component,
+    YellowLoginDoor73202Component ,
     LostsignalComponent,
-    AstrosolarsystemeComponent
+    AstrosolarsystemeComponent,
+    HunterboardComponent,
+    HunterloginpageComponent,
+    LastsceneComponent,
+    HunterdetailsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

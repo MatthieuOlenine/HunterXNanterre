@@ -1,8 +1,8 @@
 .content{
-    overflow: hidden;
-    width: 100.5%;
-    height: 100.3%;
     position: absolute;
+    width: 100.3%;
+    min-width: 500px;
+    height: 900px;
     margin-top: -10px;
     margin-left: -10px;
     background-color: white;
@@ -12,7 +12,120 @@
     margin-left: 5px;
 }
 
-p{
+div, p{
     font-family: 'Times New Roman', Times, serif;
     font-style: italic;
+    text-align: center;
+}
+
+img{
+    position: absolute;
+    top: 28px;
+    left: 0px;
+}
+
+.sun{
+    position: absolute;
+    top: 199px;
+    left: 181px;
+    transform: translate(-50%, -50%);
+}
+
+span{
+    font-style: normal;
+}
+
+.venus-outline, .earth-outline, .moon-outline, .mars-outline{
+    border-radius: 50%;
+    border: dotted 1px rgb(196, 196, 196);
+}
+
+.venus-outline{
+    position: absolute;
+    top: 164px;
+    left: 143px;
+    width: 72px;
+    height: 72px;
+}
+
+.venus{
+    position: absolute;
+    top: 190px;
+    left: 170px;
+    transform: translate(-50%, -50%);
+    animation: orbit2 12s linear infinite;
+}
+
+@keyframes orbit2{
+    from{transform: rotate(0deg)translateX(40px) rotate(0deg);}
+    to{transform: rotate(360deg)translateX(40px) rotate(-360deg);}
+}
+
+.earth-outline{
+    position: absolute;
+    top: 130px;
+    left: 109px;
+    width: 140px;
+    height: 140px;
+}
+
+.earth{
+    position: absolute;
+    top: 189px;
+    left: 170px;
+    transform: translate(-50%, -50%);
+    animation: orbit3 18s linear infinite;
+}
+
+@keyframes orbit3{
+    from{transform: rotate(0deg)translateX(70px) rotate(0deg);}
+    to{transform: rotate(360deg)translateX(70px) rotate(-360deg);}
+}
+
+.moon-outline{
+    position: absolute;
+    top: -10px;
+    left: -12px;
+    width: 40px;
+    height: 40px;
+}
+
+.moon{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    animation: orbit4 8s linear infinite;
+}
+
+@keyframes orbit4{
+    from{transform: rotate(0deg)translateX(21px) rotate(0deg);}
+    to{transform: rotate(360deg)translateX(21px) rotate(-360deg);}
+}
+
+.mars-outline{
+    position: absolute;
+    top: 75px;
+    left: 55px;
+    width: 250px;
+    height: 250px;
+}
+
+.mars{
+    position: absolute;
+    top: 190px;
+    left: 172px;
+    transform: translate(-50%, -50%);
+    animation: orbit5 36s linear infinite;
+}
+
+@keyframes orbit5{
+    from{transform: rotate(0deg)translateX(125px) rotate(0deg);}
+    to{transform: rotate(360deg)translateX(125px) rotate(-360deg);}
+}
+
+p{
+    position: absolute;
+    top: 380px;
+    left: 55px;
 }

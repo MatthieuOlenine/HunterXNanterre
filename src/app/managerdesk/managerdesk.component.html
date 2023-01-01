@@ -1,53 +1,262 @@
 <header routerLink="/">
-    <h1><marquee direction="right">Hunter X Nanterre</marquee></h1>
+    <h1><marquee direction="left">Hunter X Nanterre</marquee></h1>
 </header>
 <div class="content">
-    <div class="class">
+  <div class="class">
+    <p>
+      O U T P U T ↓
+    </p>
+  </div>
+  <div class="box" routerLink="/nomathsequence">
+    <p>red</p>
+  </div>
+  <div class="box" routerLink="/lostsignal">
+    <p>blue</p>
+  </div>
+  <div class="box" routerLink="/falsecompassway">
+    <p>purple</p>
+  </div>
+  <div class="box" routerLink="/astrosolarsysteme">
+    <p>yellow</p>
+  </div>
+  <div class="box" routerLink="/lastscene">
+    <p>green</p>
+  </div>
+  <div class="box" routerLink="/redlogindoor98456">
+    <p>LOG<sub style="color: red;font-size: 7pt;font-style: italic;"> → red</sub></p>
+  </div>
+  <div class="box" routerLink="/bluelogindoor21980">
+    <p>LOG<sub style="color: blue;font-size: 7pt;font-style: italic;"> → blue</sub></p>
+  </div>
+  <div class="box" routerLink="/purplelogindoor01231">
+    <p>LOG<sub style="color: purple;font-size: 7pt;font-style: italic;"> → purple</sub></p>
+  </div>
+  <div class="box" routerLink="/yellowlogindoor73202">
+    <p>LOG<sub style="color: rgb(180, 180, 0);font-size: 7pt;font-style: italic;"> → yellow</sub></p>
+  </div>
+  <div class="class">
+    <p>
+      S C R I P T ↓
+    </p>
+  </div>
+  <div class="box" (click)="setfooter1()">
+    <p>overview</p>
+  </div>
+  <div class="box" (click)="setfooter2()">
+    <p>settings</p>
+  </div>
+  <div class="box" (click)="setfooter3()">
+    <p>reset</p>
+  </div>
+  <div class="footer">
+    <ng-container *ngIf="footer==1">
       <p>
-        Q R C O D E ↓ 
+        O V E R V I E W ↓
       </p>
-    </div>
-    <div class="box" routerLink="/qrcode1">
-      <p>1</p>
-    </div>
-    <div class="box" routerLink="/qrcode2">
-      <p>2</p>
-    </div>
-    <div class="box" routerLink="/qrcode3">
-      <p>3</p>
-    </div>
-    <div class="box" routerLink="/qrcode4">
-      <p>4</p>
-    </div>
-    <div class="class">
+      <ng-container  class="infooter" *ngIf="currentteam.leng!=0">
+        <div class="infooter">
+          <div id="sorting" class="sort">
+            <p (click)="setsorting0()" class="chosen" id="all">ALL</p>
+            <p (click)="setsorting1()" id="red">red</p>
+            <p (click)="setsorting2()" id="blue">blue</p>
+            <p (click)="setsorting3()" id="purple">purple</p>
+            <p (click)="setsorting4()" id="yellow">yellow</p>
+            <p (click)="setsorting5()" id="green">green</p>
+          </div>
+          <div style="max-height: 200px;overflow-y: scroll;">
+            <table style="text-align: left;">
+              <thead style="color: white; position: sticky; top: 0; background-color: black;">
+                <th>
+                  <p>team</p>
+                </th>
+                <th>
+                  <p>| password</p>
+                </th>
+                <th>
+                  <p>| stat</p>
+                </th>
+                <th>
+                  <p>| details</p>
+                </th>
+              </thead>
+              <ng-container *ngIf="sorting==0">
+                <tbody *ngFor="let item of data">
+                  <td>
+                    <p>{{item.teamname}}</p>
+                  </td>
+                  <td>
+                    <p>| '{{item.password}}'</p>
+                  </td>
+                  <td>
+                    <p>| {{item.team_prog}} %</p>
+                  </td>
+                  <td>
+                    <p>
+                      | <input type="submit" class="detailsbtndlt" value="+" (click)="getmoredetails(item.teamname)">
+                    </p>
+                  </td>
+                </tbody>
+              </ng-container>
+              <ng-container *ngIf="sorting==1">
+                <tbody *ngFor="let item of data">
+                  <ng-container *ngIf="item.red_door === 'open'">
+                    <td>
+                      <p>{{item.teamname}}</p>
+                    </td>
+                    <td>
+                      <p>| '{{item.password}}'</p>
+                    </td>
+                    <td>
+                      <p>| {{item.team_prog}} %</p>
+                    </td>
+                    <td>
+                      <p>
+                        | <input type="submit" class="detailsbtndlt" value="+" (click)="getmoredetails(item.teamname)">
+                      </p>
+                    </td>
+                  </ng-container>
+                </tbody>
+              </ng-container>
+              <ng-container *ngIf="sorting==2">
+                <tbody *ngFor="let item of data">
+                  <ng-container *ngIf="item.blue_door === 'open'">
+                    <td>
+                      <p>{{item.teamname}}</p>
+                    </td>
+                    <td>
+                      <p>| '{{item.password}}'</p>
+                    </td>
+                    <td>
+                      <p>| {{item.team_prog}} %</p>
+                    </td>
+                    <td>
+                      <p>
+                        | <input type="submit" class="detailsbtndlt" value="+" (click)="getmoredetails(item.teamname)">
+                      </p>
+                    </td>
+                  </ng-container>
+                </tbody>
+              </ng-container>
+              <ng-container *ngIf="sorting==3">
+                <tbody *ngFor="let item of data">
+                  <ng-container *ngIf="item.purple_door === 'open'">
+                    <td>
+                      <p>{{item.teamname}}</p>
+                    </td>
+                    <td>
+                      <p>| '{{item.password}}'</p>
+                    </td>
+                    <td>
+                      <p>| {{item.team_prog}} %</p>
+                    </td>
+                    <td>
+                      <p>
+                        | <input type="submit" class="detailsbtndlt" value="+" (click)="getmoredetails(item.teamname)">
+                      </p>
+                    </td>
+                  </ng-container>
+                </tbody>
+              </ng-container>
+              <ng-container *ngIf="sorting==4">
+                <tbody *ngFor="let item of data">
+                  <ng-container *ngIf="item.yellow_door === 'open'">
+                    <td>
+                      <p>{{item.teamname}}</p>
+                    </td>
+                    <td>
+                      <p>| '{{item.password}}'</p>
+                    </td>
+                    <td>
+                      <p>| {{item.team_prog}} %</p>
+                    </td>
+                    <td>
+                      <p>
+                        | <input type="submit" class="detailsbtndlt" value="+" (click)="getmoredetails(item.teamname)">
+                      </p>
+                    </td>
+                  </ng-container>
+                </tbody>
+              </ng-container>
+              <ng-container *ngIf="sorting==5">
+                <tbody *ngFor="let item of data">
+                  <ng-container *ngIf="item.green_door === 'open'">
+                    <td>
+                      <p>{{item.teamname}}</p>
+                    </td>
+                    <td>
+                      <p>| '{{item.password}}'</p>
+                    </td>
+                    <td>
+                      <p>| {{item.team_prog}} %</p>
+                    </td>
+                    <td>
+                      <p>
+                        | <input type="submit" class="detailsbtndlt" value="+" (click)="getmoredetails(item.teamname)">
+                      </p>
+                    </td>
+                  </ng-container>
+                </tbody>
+              </ng-container>
+            </table>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container  class="infooter" *ngIf="currentteam.leng==0">
+        <div class="infooter">
+          <p>no overwiew yet : add teams in settings</p>
+        </div>
+      </ng-container>
+    </ng-container>
+    <ng-container *ngIf="footer==2">
       <p>
-        O U T P U T ↓
+        S E T T I N G ↓
       </p>
-    </div>
-    <div class="box" routerLink="/nomathsequence">
-      <p>1</p>
-    </div>
-    <div class="box" routerLink="/lostsignal">
-      <p>2</p>
-    </div>
-    <div class="box" routerLink="/falsecompassway">
-      <p>3</p>
-    </div>
-    <div class="box"routerLink="/astrosolarsysteme">
-      <p>4</p>
-    </div>
-    <div class="class">
+      <input type="text" class="text" placeholder=" add new team" [(ngModel)]="newteamname">
+      <input type="submit" class="textbtn" value="+" (click)="addteam()" [disabled]="isLoading">
+      <br>
+      <ng-container  class="infooter" *ngIf="currentteam.leng!=0">
+        <div class="infooter">
+          <input type="text" class="textindlt" placeholder="'team name' to del" [(ngModel)]="initdel">
+          <input type="submit" class="textbtndlt" value="-" (click)="initialone()" [disabled]="isLoading">
+          <div style="max-height: 180px; overflow-y: scroll;">
+            <table>
+              <tr *ngFor="let item of data">
+                <td>
+                  <p>{{item.teamname}} </p>
+                </td>
+                <td>
+                  <p style="margin-left: 30px;opacity: 0.5;">→ '{{item.password}}'</p>
+                </td>
+            </table>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container  class="infooter" *ngIf="currentteam.leng==0">
+        <div class="infooter">
+          <p>no team yet</p>
+        </div>
+      </ng-container>
+    </ng-container>
+    <ng-container *ngIf="footer==3">
       <p>
-        S C R I P T ↓
+        R E S E T ↓
       </p>
-    </div>
-    <div class="box">
-      <p>overview</p>
-    </div>
-    <div class="box">
-      <p>settings</p>
-    </div>
-    <div class="box">
-      <p>reset</p>
-    </div>
+      <ng-container  class="infooter" *ngIf="currentteam.leng!=0">
+        <div class="infooter">
+          <input id="newteamname" type="text" class="text" placeholder=" 'init' to reset" [(ngModel)]="initialtext">
+          <input id="addnewteamname" type="submit" class="textbtnred" value="delete" (click)="initial()" [disabled]="isLoading">
+          <br>
+          <div class="infooterred">
+            <p>/!\ database will be deleted /!\</p>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container  class="infooter" *ngIf="currentteam.leng==0">
+        <div class="infooter">
+          <p>database empty</p>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
 </div>
+    

@@ -25,8 +25,23 @@ h1{
 #private{
     padding: 10px;
     border: solid 1px white;
+    border-radius: 5px;
     background-color: black;
     opacity: 0.9;
     color: white;
     font-family: monospace;
+}
+
+.logindiv{
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    color: black;
+    font-family: monospace;
+}
+
+.logindiv:active{
+    background-color: black;
+    color: white;
+    transition: 0.2s all;
 }

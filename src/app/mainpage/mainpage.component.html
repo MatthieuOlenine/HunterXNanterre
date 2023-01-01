@@ -1,11 +1,16 @@
 <header routerLink="/">
-  <h1><marquee direction="right">Hunter X Nanterre</marquee></h1>
+  <h1><marquee direction="left">Hunter X Nanterre</marquee></h1>
 </header>
 <div class="content">
   <p>
     I N P U T ↓
   </p>
-  <input type="password" id="private" placeholder="private file only" (keyup.enter)="corporate_evidence($event)" [(ngModel)]="searchTerm">
+  <input type="password" id="private" placeholder="private file only" 
+  (keyup)="corporate_evidence($event)" [(ngModel)]="searchTerm">
+  <br><br>
+  <div (click)="login()" class="logindiv">
+    →  L O G I N  ←
+  </div>
   <p>
     Cette page est réservée aux organisateurs du HunterXNanterre. Si vous êtes un Hunter vous n'avez rien à faire ici.
   </p>

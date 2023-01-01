@@ -20,10 +20,14 @@ export class MainpageComponent implements OnInit {
 corporate_evidence(event : any){
   this.newid = [];
   this.searchTerm = (event.target as HTMLInputElement).value;
+}
+
+login(){
   for (var i in sha256(this.searchTerm))
     this.newid.push(sha256(this.searchTerm)[i])
-  if (this.newid.toString() == this.corporateid.toString())
+  if (this.newid.toString() == this.corporateid.toString()){
     this.router.navigateByUrl('managerdesk')
+  }
 }
 
 }

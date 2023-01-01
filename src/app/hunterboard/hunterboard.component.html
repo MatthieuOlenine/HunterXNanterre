@@ -1,0 +1,201 @@
+<ng-container *ngIf="alldataown.input && alldataown.team_prog > 60">
+    <img src="./assets/img/giphy2.gif" alt="GIF" id="gif">
+</ng-container>
+<header>
+    <h1>
+        <ng-container *ngIf="alldataown.team_prog == 0">
+            <marquee direction="left">- welcome - {{alldataown.teamname}} -</marquee>
+        </ng-container>
+        <ng-container *ngIf="alldataown.team_prog == 20">
+            <marquee direction="left">- 1 - door - reached -</marquee>
+        </ng-container>
+        <ng-container *ngIf="alldataown.team_prog == 40">
+            <marquee direction="left">- 2 - doors - reached -</marquee>
+        </ng-container>
+        <ng-container *ngIf="alldataown.team_prog == 60">
+            <marquee direction="left">- 3 - doors - reached -</marquee>
+        </ng-container>
+        <ng-container *ngIf="alldataown.team_prog == 80">
+            <marquee direction="left">- I N P U T - unlocked -</marquee>
+        </ng-container>
+        <ng-container *ngIf="alldataown.team_prog > 80">
+            <marquee direction="left">- unlocked - position -</marquee>
+        </ng-container>
+    </h1>
+</header>
+<details>
+    <summary>I N S T R U C T I O N S</summary>
+    <p>
+        Bienvenue sur votre tableau de bord. C'est ici que vous verrez votre progression 
+        dans la mission. La section - I N P U T - propose une suite de 
+        quatres digits à décoder.<br>Il s'agit de votre objectif principal.<br>
+        Quoi qu'il arrive : gardez votre mot de passe secret. Si d'autres venaient à le découvrir 
+        ils pourraient avoir accès à votre tableau de bord.
+    </p>
+</details>
+<div class="boxhover" id="door" (click)="setcontainer1()"> <span style="color: black;">↓</span> D O O R S <span style="color: black;">↓</span></div>
+<div class="box" id="input" (click)="setcontainer2()"> <span style="color: black;">↓</span> I N P U T <span style="color: black;">↓</span></div>
+<div class="content">
+    <ng-container *ngIf="!container">
+        <ng-container *ngIf="alldataown.red_door==='close'">
+            <div class="lock red">
+                <p>
+                    L O C K E D ↓
+                </p>
+                <div class="boxlock boxred"><img src="/assets/img/lock.png" width="30px"></div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="alldataown.red_door==='open'">
+            <div class="unlock red">
+                <p>
+                    R E D ↓
+                </p>
+                <div class="boxlock refboxred" (click)="OpenLinkInNewTabRed()"><img src="/assets/img/unlockred.png" width="17px"></div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="alldataown.blue_door==='close'">
+            <div class="lock blue">
+                <p>
+                    L O C K E D ↓
+                </p>
+                <div class="boxlock boxblue"><img src="/assets/img/lock.png" width="30px"></div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="alldataown.blue_door==='open'">
+            <div class="unlock blue">
+                <p>
+                    B L U E ↓
+                </p>
+                <div class="boxlock refboxblue" (click)="OpenLinkInNewTabBlue()"><img src="/assets/img/unlockblue.png" width="17px"></div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="alldataown.purple_door==='close'">
+            <div class="lock purple">
+                <p>
+                    L O C K E D ↓
+                </p>
+                <div class="boxlock boxpurple"><img src="/assets/img/lock.png" width="30px"></div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="alldataown.purple_door==='open'">
+            <div class="unlock purple">
+                <p>
+                    P U R P L E ↓
+                </p>
+                <div class="boxlock refboxpurple" (click)="OpenLinkInNewTabPurple()"><img src="/assets/img/unlockpurple.png" width="17px"></div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="alldataown.yellow_door==='close'">
+            <div class="lock yellow">
+                <p>
+                    L O C K E D ↓
+                </p>
+                <div class="boxlock boxyellow"><img src="/assets/img/lock.png" width="30px"></div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="alldataown.yellow_door==='open'">
+            <div class="unlock yellow">
+                <p>
+                    Y E L L O W ↓
+                </p>
+                <div class="boxlock refboxyellow" (click)="OpenLinkInNewTabYellow()"><img src="/assets/img/unlockyellow.png" width="17px"></div>
+            </div>
+        </ng-container>
+    </ng-container>
+    <ng-container *ngIf="container">
+        <ng-container *ngIf="alldataown.verif_right !== 2 && alldataown.verif_right !== 1">
+            <p class="warning">
+                /!\ Si vous entrez un code faut  
+                le système se bloque pendant 5 minutes.
+            </p>
+        </ng-container>
+        <ng-container *ngIf="alldataown.team_prog < 80 && !alldataown.input">
+            <div class="decode-parent">
+                <div class="decode">
+                    <p>Ø</p>
+                    <p>Ø</p>
+                    <p>Ø</p>
+                    <p>Ø</p>
+                </div>
+            </div>
+            <p class="notyet">
+                <br><br><br>Vous ne pouvez pas décoder pour l'instant. 
+                les 4 portes de la section - D O O R S - 
+                doivent être ouvertes pour activer le système.
+            </p>
+        </ng-container>
+        <ng-container *ngIf="alldataown.team_prog > 60 && alldataown.input">
+            <div class="decode-parent">
+                <ng-container *ngIf="alldataown.verif_right == 3">
+                    <input class="finalinput" type="number" (keyup)="verifvalueinput($event)" [(ngModel)]="valueTerms" placeholder="____">
+                    <input class="submit" type="submit" (click)="submitbtn()" value="submit" [disabled]="isLoading">
+                    <br><br><br><br>
+                </ng-container>    
+            </div>
+            <ng-container *ngIf="alldataown.verif_right == 3">
+                <p class="notyet">
+                    Vous pouvez à présent décoder.
+                </p>
+            </ng-container>
+            <ng-container *ngIf="alldataown.verif_right == 1">
+                <p class="warning">
+                    Le code est faut.
+                </p>
+                <p class="notyet">
+                    Le système fonctionnera de nouveau dans 5 minutes. 
+                    Actualisez régulièrement la page.
+                </p>
+            </ng-container>
+        </ng-container>
+        <ng-container *ngIf="alldataown.input && alldataown.verif_right == 2 && alldataown.team_prog > 60">
+            <div class="display5">
+                <p>
+                    - G R E E N<BR> - D O O R ↓
+                </p>
+                <div class="boxprog5" (click)="OpenLinkInNewTabGreen()"><img src="/assets/img/unlockgreen.png" width="20px"></div>
+            </div>
+        </ng-container>
+    </ng-container>
+</div>
+<ng-container *ngIf="alldataown.team_prog == 0">
+    <div class="progview">0%</div>
+</ng-container>
+<ng-container *ngIf="alldataown.team_prog == 20">
+    <div class="progview"><div class="prog1"></div>{{alldataown.team_prog}}%</div>
+</ng-container>
+<ng-container *ngIf="alldataown.team_prog == 40">
+    <div class="progview"><div class="prog2"></div>{{alldataown.team_prog}}%</div>
+</ng-container>
+<ng-container *ngIf="alldataown.team_prog == 60">
+    <div class="progview"><div class="prog3"><p>{{alldataown.team_prog}}%</p></div>.</div>
+</ng-container>
+<ng-container *ngIf="alldataown.team_prog == 80">
+    <div class="progview"><div class="prog4"><p>{{alldataown.team_prog}}%</p></div>.</div>
+</ng-container>
+<ng-container *ngIf="alldataown.team_prog > 80">
+    <div class="progview"><div class="prog5">{{alldataown.team_prog}}%</div></div><br>
+</ng-container>
+<div style="max-height: 205px;overflow-y: scroll;">
+    <table style="text-align: left;margin: 0 auto;">
+        <thead style="position: sticky; top: 0; background-color: black;">
+          <th>
+            <p style="color: white;">- - T E A M - - | - - </p>
+          </th>
+          <th>
+            <p style="color: white;">S T A T - -</p>
+          </th>
+        </thead>
+        <tbody *ngFor="let item of data">
+            <td>
+              <p style="margin-left: 25px;">{{item.teamname}}</p>
+            </td>
+            <td>
+              <p style="margin-left: 20;">→ {{item.team_prog}} %</p>
+            </td>
+        </tbody>
+    </table>
+</div>
+<p>- - <br>Les staffs sont présents pour répondre à vos questions 
+    mais ne comptez pas sur eux pour vous aider à progresser 
+    dans votre mission.<br> - -
+</p>

@@ -1,0 +1,35 @@
+header{
+    background-color: white;
+    margin-left: -10px;
+    width: 105%;
+    opacity: 0.9;
+}
+
+h1{
+    color: black;
+    padding-top: 5px;
+    font-family: monospace;
+}
+
+.content{
+    text-align: center;
+}
+
+.content p{
+    color: white;
+    font-family: monospace;
+}
+
+.content table{
+    margin: 0 auto;
+    text-align: left;
+}
+
+.content table .data{
+    margin-left: 20px;
+}
+
+.content table .nodata{
+    margin-left: 20px;
+    color: rgb(99, 99, 99);
+}

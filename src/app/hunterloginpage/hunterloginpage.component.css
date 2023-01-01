@@ -1,0 +1,58 @@
+header{
+    background-color: white;
+    margin-left: -10px;
+    width: 105%;
+    opacity: 0.9;
+}
+
+h1{
+    color: black;
+    padding-top: 5px;
+    font-family: monospace;
+}
+
+.content{
+    padding-left: 15px;
+    margin-left: 10px;
+    border-left: solid 1px white;
+}
+
+.content p{
+    color: white;
+    font-family: monospace;
+}
+
+.private{
+    padding: 10px;
+    border: solid 1px white;
+    background-color: black;
+    opacity: 0.9;
+    color: white;
+    font-family: monospace;
+    border-radius: 5px;
+}
+
+p{
+    color: rgb(99, 99, 99);
+    font-family: monospace;
+}
+
+.logindiv{
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    color: black;
+    font-family: monospace;
+}
+
+.logindiv:active{
+    background-color: black;
+    color: white;
+    transition: 0.2s all;
+}
+
+.footer{
+    text-align: center;
+    border: solid 1px rgb(99, 99, 99);
+    border-radius: 5px;
+}
