@@ -1,6 +1,6 @@
 {
-    "/api": {
-        "target": "http://165.232.100.194:4815",
+    "/api/*": {
+        "target": "http://hunterxnanterreserver.com:4815",
         "secure": false,
         "changeOrigin": true
     }
