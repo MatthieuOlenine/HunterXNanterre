@@ -1,7 +1,0 @@
-{
-    "/api/*": {
-        "target": "http://hunterxnanterreserver.com:4815",
-        "secure": false,
-        "changeOrigin": true
-    }
-}
