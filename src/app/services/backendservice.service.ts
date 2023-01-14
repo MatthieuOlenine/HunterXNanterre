@@ -13,7 +13,7 @@ export class BackendserviceService {
   constructor(private http : HttpClient) {}
 
   addteam(teamname : any){
-    return this.http.post("/api/register", {
+    return this.http.post("http://localhost:4815/api/register", {
       teamname,
       red_door : "close",
       blue_door : "close",
@@ -28,7 +28,7 @@ export class BackendserviceService {
   }
 
   getteamdata(): Observable<Data[]>{
-    return this.http.get<Data[]>("/api/data").pipe(
+    return this.http.get<Data[]>("http://localhost:4815/api/data").pipe(
       catchError((err) => {
         this.errMsg = err;
         return of([])
@@ -37,7 +37,7 @@ export class BackendserviceService {
   }
 
   getteamdataone(item:any): Observable<Data[]>{
-    return this.http.get<Data[]>(`/api/dataone/${item}`).pipe(
+    return this.http.get<Data[]>(`http://localhost:4815/api/dataone/${item}`).pipe(
       catchError((err) => {
         this.errMsg = err;
         return of([])
@@ -46,7 +46,7 @@ export class BackendserviceService {
   }
 
   login(teamname:any, password:any){
-    return this.http.get<{name:any}>(`/api/logindata/${teamname}/${password}`).pipe(
+    return this.http.get<{name:any}>(`http://localhost:4815/api/logindata/${teamname}/${password}`).pipe(
       catchError((err) => {
         this.errMsg = err;
         return of([])
@@ -55,7 +55,7 @@ export class BackendserviceService {
   }
 
   logincolor(teamname:any, password:any, color:any){
-    return this.http.put('/api/logincolordata', {
+    return this.http.put('http://localhost:4815/api/logincolordata', {
       name : teamname,
       pass : password,
       color : color
@@ -63,7 +63,7 @@ export class BackendserviceService {
   }
 
   submissioninput(sub:any, name:any){
-    return this.http.get<{resforsub:any}>(`/api/sub/${sub}/${name}`).pipe(
+    return this.http.get<{resforsub:any}>(`http://localhost:4815/api/sub/${sub}/${name}`).pipe(
       catchError((err) => {
         this.errMsg = err;
         return of([])
@@ -72,7 +72,7 @@ export class BackendserviceService {
   }
 
   gettotal(){
-    return this.http.get<{leng:any}>("/api/total").pipe(
+    return this.http.get<{leng:any}>("http://localhost:4815/api/total").pipe(
       catchError((err) => {
         this.errMsg = err;
         return of([])
@@ -81,10 +81,10 @@ export class BackendserviceService {
   }
 
   initialone(id:any){
-    return this.http.delete(`/api/initone/${id}`).subscribe()
+    return this.http.delete(`http://localhost:4815/api/initone/${id}`).subscribe()
   }
 
   initial(){
-    return this.http.delete("/api/init").subscribe()
+    return this.http.delete("http://localhost:4815/api/init").subscribe()
   }
 }

@@ -63,8 +63,8 @@
             <p (click)="setsorting4()" id="yellow">yellow</p>
             <p (click)="setsorting5()" id="green">green</p>
           </div>
-          <div style="max-height: 200px;overflow-y: scroll;">
-            <table style="text-align: left;">
+          <div style="max-height: 300px;overflow-y: scroll;">
+            <table>
               <thead style="color: white; position: sticky; top: 0; background-color: black;">
                 <th>
                   <p>team</p>
@@ -82,7 +82,7 @@
               <ng-container *ngIf="sorting==0">
                 <tbody *ngFor="let item of data">
                   <td>
-                    <p>{{item.teamname}}</p>
+                    <p class="nale">{{item.teamname}}</p>
                   </td>
                   <td>
                     <p>| '{{item.password}}'</p>
@@ -101,7 +101,7 @@
                 <tbody *ngFor="let item of data">
                   <ng-container *ngIf="item.red_door === 'open'">
                     <td>
-                      <p>{{item.teamname}}</p>
+                      <p class="nale">{{item.teamname}}</p>
                     </td>
                     <td>
                       <p>| '{{item.password}}'</p>
@@ -121,7 +121,7 @@
                 <tbody *ngFor="let item of data">
                   <ng-container *ngIf="item.blue_door === 'open'">
                     <td>
-                      <p>{{item.teamname}}</p>
+                      <p class="nale">{{item.teamname}}</p>
                     </td>
                     <td>
                       <p>| '{{item.password}}'</p>
@@ -141,7 +141,7 @@
                 <tbody *ngFor="let item of data">
                   <ng-container *ngIf="item.purple_door === 'open'">
                     <td>
-                      <p>{{item.teamname}}</p>
+                      <p class="nale">{{item.teamname}}</p>
                     </td>
                     <td>
                       <p>| '{{item.password}}'</p>
@@ -161,7 +161,7 @@
                 <tbody *ngFor="let item of data">
                   <ng-container *ngIf="item.yellow_door === 'open'">
                     <td>
-                      <p>{{item.teamname}}</p>
+                      <p class="nale">{{item.teamname}}</p>
                     </td>
                     <td>
                       <p>| '{{item.password}}'</p>
@@ -181,7 +181,7 @@
                 <tbody *ngFor="let item of data">
                   <ng-container *ngIf="item.green_door === 'open'">
                     <td>
-                      <p>{{item.teamname}}</p>
+                      <p class="nale">{{item.teamname}}</p>
                     </td>
                     <td>
                       <p>| '{{item.password}}'</p>
@@ -257,6 +257,13 @@
         </div>
       </ng-container>
     </ng-container>
+    <p class="bottom">
+      - - <br>
+      L'intégralité des missives à distribuer ainsi que les QrCodes sont disponibles dans 
+      le repository <span class="bottom" (click)="OpenGameConception()">→ Game Conception</span> du drive. Cliquez sur le lien pour 
+      y avoir accès.
+      <br>- -
+    </p>
   </div>
 </div>
     

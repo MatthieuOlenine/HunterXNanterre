@@ -16,7 +16,13 @@
             <marquee direction="left">- 3 - doors - reached -</marquee>
         </ng-container>
         <ng-container *ngIf="alldataown.team_prog == 80">
-            <marquee direction="left">- I N P U T - unlocked -</marquee>
+            <marquee direction="left">
+                - I N P U T - 
+                <div class="Bl Badge"></div>
+                <div class="Ye Badge"></div>
+                <div class="Re Badge"></div>
+                <div class="Pu Badge"></div> -
+            </marquee>
         </ng-container>
         <ng-container *ngIf="alldataown.team_prog > 80">
             <marquee direction="left">- unlocked - position -</marquee>
@@ -105,7 +111,7 @@
     <ng-container *ngIf="container">
         <ng-container *ngIf="alldataown.verif_right !== 2 && alldataown.verif_right !== 1">
             <p class="warning">
-                /!\ Si vous entrez un code faut  
+                /!\ Si vous entrez un code faux  
                 le système se bloque pendant 5 minutes.
             </p>
         </ng-container>
@@ -139,7 +145,7 @@
             </ng-container>
             <ng-container *ngIf="alldataown.verif_right == 1">
                 <p class="warning">
-                    Le code est faut.
+                    Le code est faux.
                 </p>
                 <p class="notyet">
                     Le système fonctionnera de nouveau dans 5 minutes. 

@@ -3,8 +3,7 @@
     margin-top: 30%;
 }
 
-.semicircle,
-.semicircle div {
+.semicircle, .semicircle div{
   width: 240px;
   height: 240px;
   animation: 4s rotate141 infinite linear;
@@ -14,7 +13,7 @@
   overflow: hidden;
 }
 
-.semicircle div {
+.semicircle div{
   position: absolute;
   top: 5%;
   left: 5%;
@@ -22,8 +21,7 @@
   height: 90%;
 }
 
-.semicircle:before,
-.semicircle div:before {
+.semicircle:before, .semicircle div:before{
   content: '';
   width: 100%;
   height: 50%;

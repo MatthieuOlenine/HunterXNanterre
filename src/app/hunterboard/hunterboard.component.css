@@ -18,6 +18,30 @@ h1{
     font-family: monospace;
 }
 
+.Badge{
+    display: inline-block;
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+}
+
+div.Bl{
+    background-color: blue;
+}
+
+div.Ye{
+    background-color: yellow;
+}
+
+div.Re{
+    background-color: red;
+}
+
+div.Pu{
+    background-color: purple;
+}
+
 .content{
     padding-left: 15px;
     margin-left: 10px;

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { log } from 'console';
 import { BackendserviceService } from '../services/backendservice.service';
 import { SubscribedataService } from '../services/subscribedata.service';
 
@@ -121,6 +120,10 @@ export class ManagerdeskComponent implements OnInit {
     };
     await new Promise(resolve => setTimeout(resolve, 500));
     this.isLoading = false;
+  }
+
+  OpenGameConception(){
+    window.open('https://drive.google.com/drive/u/0/folders/1s5r_YuPIoZ_GKq7LYCSfFILbEuG7t9-2')
   }
 
 }

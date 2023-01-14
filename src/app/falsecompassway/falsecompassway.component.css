@@ -11,9 +11,9 @@
 .moving{
     z-index: 2;
     position: absolute;
-    padding-top: 50%;
+    padding-top: 10%;
     padding-left: 5%;
-    transform-origin: 52.64% 67.78%;
+    transform-origin: 52.64% 54.98%;
     transition: 0.2s all;
 }
 
@@ -22,6 +22,6 @@
     position: absolute;
     margin-left: 11.5%;
     margin-top: 9%;
-    padding-top: 50%;
+    padding-top: 10%;
     padding-left: 2.5%;
 }
