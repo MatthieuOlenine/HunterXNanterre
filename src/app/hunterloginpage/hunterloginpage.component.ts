@@ -21,6 +21,10 @@ export class HunterloginpageComponent implements OnInit {
   
   async login(){
     this.isLoading = true;
+    this.searchTermname = this.searchTermname.toLowerCase();
+    this.searchTermpsswrd = this.searchTermpsswrd.toLowerCase();
+    this.searchTermname = this.searchTermname.replace(/\s+/g, '');
+    this.searchTermpsswrd = this.searchTermpsswrd.replace(/\s+/g, '');
     this.serv.login(this.searchTermname, this.searchTermpsswrd).subscribe(name => this.verif = name);
     await new Promise(resolve => setTimeout(resolve, 500));
     if(this.verif['teamname'] == this.searchTermname){
